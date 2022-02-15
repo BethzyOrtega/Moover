@@ -1,5 +1,10 @@
 import React from 'react';
+import { Nav } from './Nav';
 
 export const Moover = () => {
-  return <div>Solicitar moover</div>;
+  return (
+
+      <Nav/>
+
+  );
 };
