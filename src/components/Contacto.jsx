@@ -5,7 +5,44 @@ import { Footer } from './Footer';
 import db from '../services/faribase-config';
 import { collection, addDoc } from "firebase/firestore";
 
-export const Contacto = async () => {
+export const Contacto = () => {
+
+  /**** Obteniendo los datos *******/
+
+    const [datosContacto, setDatosContacto] = useState({
+    name:'',
+    telefono:'',
+    email:'',
+    asunto: '',
+    mensaje:'',
+  });
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setDatosContacto({
+        ...datosContacto,
+        [e.target.name] : e.target.value,
+    })
+    console.log(datosContacto);
+};
+
+/******Almacenado los datos *****************/
+
+const btnEnviarContacto = async (e) => {
+  e.preventDefault();
+   try {
+    const docRef = await addDoc(collection(db, "contactos"), {
+      nombre: datosContacto.name,
+      telefono: datosContacto.telefono,
+      email: datosContacto.email,
+      asunto: datosContacto.asunto,
+      mensaje: datosContacto.mensaje
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
 
   return (  
        <><Nav />
@@ -17,15 +54,15 @@ export const Contacto = async () => {
          </div>
          <form action="" className='container-formulario'>
            <div className='three-inputs'>
-             <input name= 'name' type="text" placeholder='Nombre y Apellidos (*)' />
-             <input name='telefono' type="number" placeholder='Telefono (*)' />
-             <input name='email'type="text" placeholder='Email (*)' />
+             <input onChange={handleChange} name= 'name' type="text" placeholder='Nombre y Apellidos (*)' />
+             <input onChange={handleChange} name='telefono' type="text" placeholder='Telefono (*)' />
+             <input onChange={handleChange} name='email'type="text" placeholder='Email (*)' />
            </div>
            <div className='container-asunto'>
-           <input name = 'asunto' type="text" placeholder='Asunto (*)' />
+           <input onChange={handleChange} name = 'asunto' type="text" placeholder='Asunto (*)' />
            </div>             
-           <textarea name="mensaje" id="" cols="30" rows="10" placeholder='Escriba su mensaje'></textarea>
-           <button>Enviar Mensaje</button>
+           <textarea onChange={handleChange} name="mensaje" id="" cols="30" rows="10" placeholder='Escriba su mensaje'></textarea>
+           <button onClick={btnEnviarContacto} className='btnEnviarContacto'>Enviar Mensaje</button>
          </form>                 
       </section>
       <Footer/>      
