@@ -4,6 +4,7 @@ import '../styles/contacto.css';
 import { Footer } from './Footer';
 import db from '../services/faribase-config';
 import { collection, addDoc } from "firebase/firestore";
+import swal from 'sweetalert';
 
 export const Contacto = () => {
 
@@ -39,6 +40,8 @@ const btnEnviarContacto = async (e) => {
       mensaje: datosContacto.mensaje
     });
     console.log("Document written with ID: ", docRef.id);
+    swal("Su mensaje fue enviado con extito!", "Nos comunicaremos a la brevedad!", "success");
+    document.getElementById('formulario').reset();
   } catch (e) {
     console.error("Error adding document: ", e);
   }
@@ -52,7 +55,7 @@ const btnEnviarContacto = async (e) => {
            <h2>Vamos a conocernos</h2>
            <p>Si desea mayor información acerca de nuestros servicios, contáctese con nosotros a cualquiera de nuestros canales de comunicación que a la brevedad nos pondremos en contacto con Ud.</p>
          </div>
-         <form action="" className='container-formulario'>
+         <form action="" className='container-formulario' id='formulario'>
            <div className='three-inputs'>
              <input onChange={handleChange} name= 'name' type="text" placeholder='Nombre y Apellidos (*)' />
              <input onChange={handleChange} name='telefono' type="text" placeholder='Telefono (*)' />
