@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav } from './Nav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faLocationDot, faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import '../styles/contacto.css';
+import { Footer } from './Footer';
+import db from '../services/faribase-config';
+import { collection, addDoc } from "firebase/firestore";
 
-export const Contacto = () => {
+export const Contacto = async () => {
+
   return (  
        <><Nav />
   
@@ -15,35 +17,18 @@ export const Contacto = () => {
          </div>
          <form action="" className='container-formulario'>
            <div className='three-inputs'>
-             <input type="text" placeholder='Nombre y Apellidos (*)' />
-             <input type="number" placeholder='Telefono (*)' />
-             <input type="text" placeholder='Email (*)' />
+             <input name= 'name' type="text" placeholder='Nombre y Apellidos (*)' />
+             <input name='telefono' type="number" placeholder='Telefono (*)' />
+             <input name='email'type="text" placeholder='Email (*)' />
            </div>
            <div className='container-asunto'>
-           <input type="text" placeholder='Asunto (*)' />
-           </div>     
-           
-           <textarea name="" id="" cols="30" rows="10" placeholder='Escriba su mensaje'></textarea>
+           <input name = 'asunto' type="text" placeholder='Asunto (*)' />
+           </div>             
+           <textarea name="mensaje" id="" cols="30" rows="10" placeholder='Escriba su mensaje'></textarea>
            <button>Enviar Mensaje</button>
-         </form>         
+         </form>                 
       </section>
-      <footer className='container-redes-sociales'>
-           <div>
-           <FontAwesomeIcon className='icon' icon={faLocationDot} />
-           <h2>Direccion</h2>
-           <label htmlFor="">Av.Huarochirí 560 Piso 3 , San Isidro</label>
-           </div>
-           <div>
-           <FontAwesomeIcon className='icon' icon={faPhone} />
-           <h2>Telefono</h2>
-           <label htmlFor="">+51 998767898</label>
-           </div>
-           <div>
-           <FontAwesomeIcon className='icon' icon={faEnvelope} />
-           <h2>Email</h2>
-           <label htmlFor="">currier@enterprise.com</label>
-           </div>
-      </footer>
+      <Footer/>      
       </>
             
      
