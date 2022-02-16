@@ -1,0 +1,80 @@
+.container-datos{
+    background-color: #E5E5E5;
+    padding-top: 1px;
+    text-align: center;
+}
+
+.container-datos-origen{
+    margin: 0 90px;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.container-datos-origen p{
+    display: flex;
+    justify-content: center;
+    color: #F26D6D;
+    font-size: x-large;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+.container-datos-origen section{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 30px;
+    
+}
+
+.container-datos-origen section input{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+    /* margin: auto; */
+}
+
+.container-datos-destino{
+    margin: 0 90px;
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container-datos-destino p{
+    display: flex;
+    justify-content: center;
+    color: #F26D6D;
+    font-size: x-large;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+.container-datos-destino section{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.container-datos-destino section input{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;
+    /* margin: auto; */
+}
+
+.container-datos button{
+   margin: auto;
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #F26D6D;
+    border: 0; 
+    margin: 30px 0;
+
+}
