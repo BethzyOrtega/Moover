@@ -3,6 +3,7 @@ import { Nav } from './Nav';
 import '../styles/seguimiento.css';
 import db from '../services/faribase-config';
 import { doc, getDoc } from "firebase/firestore";
+import swal from 'sweetalert';
 
 export const EstadoPaquete = () => {
 
@@ -33,8 +34,9 @@ const btnSeguimiento = async (e) => {
     setShowData(docSnap.data());
 
   } else {
-
     console.log("No such document!");
+    setShow(false);
+    swal("Codigo incorrecto", "Por favor vuelva a ingresar el codigo", "error");
   }
   
 }
@@ -42,11 +44,13 @@ const btnSeguimiento = async (e) => {
   return (
     <><Nav />
     <section className='container-seguimiento'>
+      <section>
       <h2>Ingrese Numero de seguimiento</h2>
       <div>
       <input onChange={handleChange} name='codigo' type="text" placeholder='Ingrese numero de seguimiento'/>
       <button onClick={btnSeguimiento} className=''>Ver</button>
-      </div>      
+      </div> 
+      </section>     
     </section>
 
     <section className='container-table' style={{ display: show ? "block" : "none" }}>
