@@ -16,6 +16,7 @@ export const Moover = () => {
     peso:'',
     descripcion:'',
     nameDestino:'',
+    apellidoDestino:'',
     telefonoDestino:'',
     dniDestino: '',
     direccion:'',
@@ -44,10 +45,12 @@ const btnEnviarPaquete = async (e) => {
       peso:datos.peso,
       descripcion:datos.descripcion,
       nameDestino:datos.nameDestino,
+      apellidoDestino:datos.apellidoDestino,
       telefonoDestino:datos.telefonoDestino,
       dniDestino: datos.dniDestino,
       direccion:datos.direccion,
       distrito:datos.distrito,
+      estado: 'En proceso',
     });
     console.log("Document written with ID: ", docRef.id);
     swal("Su envio se registro con extito!", `Hacer seguimiento con el codigo ${docRef.id}`, "success");

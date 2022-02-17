@@ -6,6 +6,10 @@ import { doc, getDoc } from "firebase/firestore";
 
 export const EstadoPaquete = () => {
 
+  const [show, setShow] = useState(false);
+
+  const [showData, setShowData] = useState({});
+
   const [codigo, setCodigo] = useState({
     codigo :'',
   });
@@ -16,7 +20,6 @@ export const EstadoPaquete = () => {
         ...codigo,
         [e.target.name] : e.target.value,
     })
-    console.log(codigo);
 };
 
 const btnSeguimiento = async (e) => {
@@ -24,16 +27,18 @@ const btnSeguimiento = async (e) => {
 
   const docRef = doc(db, "envios", codigo.codigo);
   const docSnap = await getDoc(docRef);
-  console.log(docSnap);
   
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
+    setShow(true);
+    setShowData(docSnap.data());
+
   } else {
-    // doc.data() will be undefined in this case
+
     console.log("No such document!");
   }
-
+  
 }
+
   return (
     <><Nav />
     <section className='container-seguimiento'>
@@ -41,8 +46,36 @@ const btnSeguimiento = async (e) => {
       <div>
       <input onChange={handleChange} name='codigo' type="text" placeholder='Ingrese numero de seguimiento'/>
       <button onClick={btnSeguimiento} className=''>Ver</button>
-      </div>
-      
-    </section></>
+      </div>      
+    </section>
+
+    <section className='container-table' style={{ display: show ? "block" : "none" }}>
+      <table>
+        <thead>
+          <tr>
+          <th scope="col">Nombre Destinatario</th>
+          <th scope="col">Apelllido Destinatario</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+
+            <tr>
+            <td>{showData.nameDestino}</td>
+            <td>{showData.apellidoDestino}</td>
+            <td>{showData.direccion}</td>
+            <td>{showData.estado}</td>            
+            </tr>
+
+          }
+
+        </tbody>
+      </table>
+
+
+    </section>
+    </>
   );
 };
