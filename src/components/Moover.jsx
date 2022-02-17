@@ -4,6 +4,7 @@ import '../styles/moover.css';
 import db from '../services/faribase-config';
 import { collection, addDoc } from "firebase/firestore";
 import swal from 'sweetalert';
+import { Footer } from './Footer';
 
 export const Moover = () => {
 
@@ -88,7 +89,9 @@ const btnEnviarPaquete = async (e) => {
           </section>
         </form>
         <button onClick={btnEnviarPaquete} className='btnEnviarPaquete'>Enviar</button>
-      </section></>
+      </section>
+      <Footer />
+      </>
 
   );
 };

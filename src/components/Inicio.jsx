@@ -3,6 +3,7 @@ import { Nav } from './Nav';
 import '../styles/navigator.css';
 import logo from '../images/generatedtext9.png';
 import logo2 from '../images/imagen-inicio.jpg'
+import { Footer } from './Footer';
 
 export const Inicio = () => {
   return (
@@ -17,7 +18,9 @@ export const Inicio = () => {
       <section className='container-logo2'>
          <img src={logo2} alt="Logo-portada" />
       </section>      
-    </section></>
+    </section>
+    <Footer/>
+    </>
      
   );
 };
