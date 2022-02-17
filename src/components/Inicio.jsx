@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav } from './Nav';
-import '../styles/navigator.css';
+import '../styles/inicio.css';
 import logo from '../images/generatedtext9.png';
 import logo2 from '../images/imagen-inicio.jpg'
 import { Footer } from './Footer';

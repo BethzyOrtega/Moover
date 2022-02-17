@@ -1,0 +1,47 @@
+.container-allImages-text{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.container-logo1-text{
+    text-align: center;
+}
+
+.text-inicio{
+    margin: 0 50px;
+    text-align: justify;
+
+}
+
+.text-inicio p{
+    color: #5C64F7;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.container-logo2 img{
+    width: 500px;
+
+}
+
+.container-logo1-text img{
+    width: 300px;
+    padding: 40px 50px 0px;
+}
+
+@media (max-width: 864px){
+
+    .container-allImages-text{
+        /* display: flex; */
+        flex-direction: column;
+    }
+
+    .container-logo2 img{
+        text-align: center;
+    
+    }
+
+    
+
+
+}
