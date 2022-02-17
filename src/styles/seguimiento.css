@@ -1,7 +1,21 @@
 .container-seguimiento{
-    margin: 50px;
+display: flex;
+justify-content: center;
     
 }
+
+.container-seguimiento section{
+    width: 60%;
+    border: 1px solid #F26D6D;
+    border-radius: 25px;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+}
+
+.container-seguimiento section div{
+    margin-bottom: 30px;
+}
+
 
 .container-seguimiento h2{
     display: flex;

@@ -1,18 +1,22 @@
 .container-datos{
-    background-color: #E5E5E5;
+    background-color: white;
     padding-top: 1px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container-datos-origen{
-    margin: 0 90px;
-    background-color: white;
+.container-datos-origen, .container-datos-destino{
+    width: 50%;
+    background-color: #f1f0f0;
     border-radius: 40px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px;
+    margin: 30px;
     
 }
 
-.container-datos-origen p{
+.container-datos-origen p, .container-datos-destino p{
     display: flex;
     justify-content: center;
     color: #F26D6D;
@@ -22,7 +26,7 @@
     font-weight: bolder;
 }
 
-.container-datos-origen section{
+.container-datos-origen section, .container-datos-destino section{
     width: 90%;
     margin: auto;
     text-align: center;
@@ -30,42 +34,10 @@
     
 }
 
-.container-datos-origen section input{
+.container-datos-origen section input, .container-datos-destino section input{
     width: 80%;
     height: 30px;
     margin-bottom: 10px;
-    /* margin: auto; */
-}
-
-.container-datos-destino{
-    margin: 0 90px;
-    background-color: white;
-    border-radius: 40px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.container-datos-destino p{
-    display: flex;
-    justify-content: center;
-    color: #F26D6D;
-    font-size: x-large;
-    margin-bottom: 10px;
-    padding-top: 20px;
-    font-weight: bolder;
-}
-
-.container-datos-destino section{
-    width: 90%;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.container-datos-destino section input{
-    width: 80%;
-    height: 30px;
-    margin-bottom: 10px;
-    /* margin: auto; */
 }
 
 .container-datos button{
