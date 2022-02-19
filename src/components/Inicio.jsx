@@ -12,7 +12,7 @@ export const Inicio = () => {
       <section className='container-logo1-text'>
         <img src={logo} alt="Moover" />
         <div className='text-inicio'>
-        <p>Brindamos soluciones logística de traslado y distribución inmediata de mercadería, documentos y paquetes menores a tiempo completo o tiempoparcial.</p>
+        <p>Brindamos soluciones logística de traslado y distribución inmediata de mercadería, documentos y paquetes menores a tiempo completo o tiempo parcial.</p>
         </div>
       </section>      
       <section className='container-logo2'>

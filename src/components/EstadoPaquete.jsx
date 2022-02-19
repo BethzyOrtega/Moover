@@ -46,7 +46,7 @@ const btnSeguimiento = async (e) => {
     <><Nav />
     <section className='container-seguimiento'>
       <section>
-      <h2>Ingrese Numero de seguimiento</h2>
+      <h2>Ingrese Número de Seguimiento</h2>
       <div>
       <input onChange={handleChange} name='codigo' type="text" placeholder='Ingrese numero de seguimiento'/>
       <button onClick={btnSeguimiento} className=''>Ver</button>
