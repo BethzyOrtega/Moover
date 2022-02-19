@@ -11,6 +11,7 @@ export const Nav = () => {
                     <Link className='link-navigator' to="/moover">Moover</Link>
                     <Link className='link-navigator' to="/estado-paquete">Estado de Paquete</Link>                    
                     <Link className='link-navigator' to="/contacto">Contacto</Link>
+                    <Link className='link-navigator' to="/estadisticas">Estadisticas</Link>
                 </div>
             </nav>
         </>
