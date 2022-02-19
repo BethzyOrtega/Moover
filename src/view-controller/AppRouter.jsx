@@ -4,6 +4,7 @@ import {Inicio} from '../components/Inicio';
 import {Moover} from '../components/Moover';
 import {EstadoPaquete} from '../components/EstadoPaquete';
 import {Contacto} from '../components/Contacto';
+import { Estadisticas } from '../components/Estadisticas';
 
 
 export const AppRouter = () => {
@@ -15,6 +16,7 @@ export const AppRouter = () => {
             <Route path="/moover" element={ <Moover /> } />
             <Route path="/estado-paquete" element={ <EstadoPaquete /> } />
             <Route path="/contacto" element={ <Contacto /> } />
+            <Route path="/estadisticas" element={ <Estadisticas /> } />
         </Routes>
     </Router>
 </>
