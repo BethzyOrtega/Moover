@@ -8,12 +8,12 @@ export const Footer = () => {
     <footer className='container-redes-sociales'>
     <div>
     <FontAwesomeIcon className='icon' icon={faLocationDot} />
-    <h2>Direccion</h2>
+    <h2>Dirección</h2>
     <label htmlFor="">Av.Huarochirí 560 Piso 3 , San Isidro</label>
     </div>
     <div>
     <FontAwesomeIcon className='icon' icon={faPhone} />
-    <h2>Telefono</h2>
+    <h2>Teléfono</h2>
     <label htmlFor="">+51 998767898</label>
     </div>
     <div>
